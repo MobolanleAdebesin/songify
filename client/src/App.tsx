@@ -1,24 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Formik} from 'formik'; 
+import { TextField, Button} from '@material-ui/core';
 
-function App() {
+/**
+ * 
+ * @returns 
+ */
+
+/*
+Set up the form 
+
+ */
+
+const App = () =>  {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Formik initialValues={{title: ''}}
+      onSubmit={(values, {setSubmitting, resetForm}) => {
+        setTimeout(() => {
+          console.log(JSON.stringify(values))
+          setSubmitting(false);
+        }, 2000)
+        resetForm();
+      }}>{({values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting}) => (
+        <form onSubmit={handleSubmit}>
+
+        <TextField 
+        name="title"
+        placeholder="song title" 
+        onChange={handleChange} 
+        onBlur={handleBlur} 
+        value ={values.title}
+        label="Title"
+        />
+        {errors.title && touched.title && errors.title}
+        <Button type="submit" disabled={isSubmitting} variant="outlined" color="primary">Submit</Button>
+        </form>
+      )}
+    
+      </Formik>
     </div>
   );
 }
