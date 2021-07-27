@@ -1,6 +1,6 @@
 import React from 'react';
 import {Formik} from 'formik'; 
-
+import Axios from 'axios';
 import { TextField, Button} from '@material-ui/core';
 
 import * as yup from 'yup';
@@ -20,6 +20,7 @@ const validationSchema = yup.object({
 })
 
 const App = () =>  {
+
   return (
     <div className="App">
       <Formik 
@@ -27,11 +28,17 @@ const App = () =>  {
       initialValues={{title: ''}}
       validationSchema={validationSchema}
       onSubmit={(values, {setSubmitting, resetForm}) => {
-        setTimeout(() => {
-          console.log(JSON.stringify(values))
+        Axios.post("https://songify-app-api.herokuapp.com/search/post",{
+          title: values.title
+        } 
+          
+        ).then(res => {
+          console.log(res)
           setSubmitting(false);
-        }, 2000)
-        resetForm();
+          resetForm();
+        })
+        .catch(err => console.log(err))
+      
       }}>{({values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting}) => (
         <form onSubmit={handleSubmit}>
 
