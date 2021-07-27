@@ -41,7 +41,7 @@ module.exports = {
                 
 
                 let songListData = await rawSongData.data.tracks.items
-                let trackData = await songListData.map((track) => ({song: track.name, artist: track.artists[0].name}));
+                let trackData = await songListData.map((track) => ({song: track.name, artist: track.artists[0].name, id: track.id}));
                 res.send(trackData)    
                 
         }
