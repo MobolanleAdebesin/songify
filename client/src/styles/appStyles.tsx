@@ -12,6 +12,9 @@ export const nestedGridStyles = makeStyles((theme) => ({
   }));
 
   export const containerStyles = makeStyles((theme) => ({
+    header: {
+        textAlign: "center", 
+       }, 
     root: {
         width: 500, 
         height: 250, 
@@ -19,6 +22,7 @@ export const nestedGridStyles = makeStyles((theme) => ({
         alignItems: 'center', 
         justifyContent: 'center'
     },
+
     item: {
         margin: 'auto',
     },

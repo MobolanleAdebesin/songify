@@ -33,6 +33,9 @@ const App = () => {
 
   return (
     <div className="App">
+           <h1 className={classes.header}>Songify</h1>
+           <h5 className={classes.header}>A Fun Twist on a Classic App</h5>
+
       <Container className={classes.root}>
         <Formik
           initialValues={{ title: "" }}
@@ -53,7 +56,6 @@ const App = () => {
           {({
             values,
             errors,
-            touched,
             handleChange,
             handleBlur,
             handleSubmit,
@@ -68,7 +70,7 @@ const App = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.title}
-                label="Title"
+                label="Song Title"
               />
               <div>
                 <Button
