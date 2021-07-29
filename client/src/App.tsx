@@ -1,25 +1,20 @@
 import React, {useState, useEffect} from 'react';
-import {Formik} from 'formik'; 
+import {FieldAttributes, Formik, useField} from 'formik'; 
 import Axios from 'axios';
-import { TextField, Button} from '@material-ui/core';
+import { TextField, Button, Grid} from '@material-ui/core';
+
+
+
 
 import * as yup from 'yup';
+import NestedGrid from './components /NestedGrid';
 
-/**
- * 
- * @returns 
- */
-
-/*
-Set up the form 
-
- */
-
-interface Song {
-  artist: string; 
-  id: string; 
-  song: string; 
+export interface Song {
+    artist: string; 
+    id: string; 
+    song: string;
 }
+export interface Song extends Array<Song>{}
 
 
 
@@ -29,7 +24,8 @@ const validationSchema = yup.object({
 })
 
 const App = () =>  {
-const [trackList, setTrackList] = useState([]); 
+  const emptySong: Song[] = []
+const [trackList, setTrackList] = useState(emptySong); 
 useEffect(() => {
   console.log(trackList)
 }, [trackList])
@@ -44,7 +40,8 @@ useEffect(() => {
           title: values.title
         })
         .then(res => {
-          setTrackList(res.data)
+          const songList : Song[] = res.data
+          setTrackList(songList);
           setSubmitting(false);
           resetForm();
         })
@@ -64,7 +61,6 @@ useEffect(() => {
         label="Title"
 
         />
-        {errors.title && touched.title && errors.title}
         <div>
         <Button type="submit" disabled={isSubmitting} variant="outlined" color="primary">Submit</Button>
         </div>
@@ -74,9 +70,8 @@ useEffect(() => {
     
       </Formik>
       {
-        trackList.map((track: Song) => <iframe src={`https://open.spotify.com/embed/track/${track.id}` } title={track.song} width="100%" height="380" frameBorder="0" allowTransparency={true} allow="encrypted-media"></iframe>)
-      }
-      
+        <NestedGrid trackList={trackList}></NestedGrid>      }
+
     </div>
   );
 }
