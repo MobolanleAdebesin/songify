@@ -85,7 +85,7 @@ const App = () => {
           )}
         </Formik>
         </Container>
-        {<NestedGrid trackList={trackList}></NestedGrid>}
+        {<NestedGrid trackList={trackList} setTrackList={setTrackList}></NestedGrid>}
     
     </div>
   );

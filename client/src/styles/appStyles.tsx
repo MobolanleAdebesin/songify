@@ -6,8 +6,8 @@ export const nestedGridStyles = makeStyles((theme) => ({
     },
     paper: {
       height: 280,
-      width: 250,
-      marginBottom: 100,
+      width: 400,
+      marginBottom: 200,
     }
   }));
 
