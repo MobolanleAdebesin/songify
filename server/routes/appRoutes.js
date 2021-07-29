@@ -5,5 +5,5 @@ const searchRoutes = require('./SearchRoutes');
 
 router.use('/search', searchRoutes);
 
-// All the other routes 
+
 module.exports = router;
