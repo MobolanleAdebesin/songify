@@ -32,11 +32,10 @@ const App = () => {
   const classes = containerStyles();
 
   return (
-    <div className="App">
-           <h1 className={classes.header}>Songify</h1>
-           <h5 className={classes.header}>A Fun Twist on a Classic App</h5>
+    <div className="App">     
 
       <Container className={classes.root}>
+      <h1 className={classes.header}>Songify</h1>
         <Formik
           initialValues={{ title: "" }}
           validationSchema={validationSchema}
@@ -72,8 +71,7 @@ const App = () => {
                 value={values.title}
                 label="Song Title"
               />
-              <div>
-                <Button
+              <Button
                   className={classes.button}
                   type="submit"
                   disabled={isSubmitting}
@@ -82,7 +80,7 @@ const App = () => {
                 >
                   Submit
                 </Button>
-              </div>
+
             </form>
           )}
         </Formik>

@@ -16,11 +16,11 @@ export const nestedGridStyles = makeStyles((theme) => ({
         textAlign: "center", 
        }, 
     root: {
-        width: 500, 
+        width: "100%", 
         height: 250, 
         display: 'flex', 
         alignItems: 'center', 
-        justifyContent: 'center'
+        justifyContent: 'space-between'
     },
 
     item: {
