@@ -48,9 +48,9 @@ The deployed site can be found [here](https://nostalgic-mirzakhani-fcf196.netlif
 When considering accessibility I tried to go with a simple design (if it's good enough for Google, right?) that included titles for the iframe components, 
 buttons that clicked, a text field with a label, and minimal color for minimal contrast. 
 
-![ScreenShot](https://github.com/MobolanleAdebesin/songify/blob/master/client/public/songify-main-page.png)
-![ScreenShot](https://github.com/MobolanleAdebesin/songify/blob/master/client/public/songify-validation.png)
-![ScreenShot](https://github.com/MobolanleAdebesin/songify/blob/master/client/public/songify-results.png)
+![ScreenShot](https://github.com/MobolanleAdebesin/songify/blob/master/client/public/form.png)
+![ScreenShot](https://github.com/MobolanleAdebesin/songify/blob/master/client/public/validation%20.png)
+![ScreenShot](https://github.com/MobolanleAdebesin/songify/blob/master/client/public/search-results.png)
 
 
 ## Architecture Pattern/Overview 
