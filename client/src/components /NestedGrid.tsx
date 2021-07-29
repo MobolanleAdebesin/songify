@@ -30,7 +30,7 @@ const NestedGrid: React.FC<Props> = ({ ...props }) => {
                <IFrame id={value.id} title={value.song}/>
                 <Button
                   variant="outlined"
-                  color="secondary"
+                  color="primary"
                   id={value.id}
                   onClick={removeSong}
                 >
