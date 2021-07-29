@@ -12,7 +12,7 @@ Songify is a simple full-stack application that allows users to:
 1. Play each of the 5 songs 
 1. Delete individual songs if they would like 
 
-The deployed site can be found [here](https://nostalgic-mirzakhani-fcf196.netlify.app/)
+The deployed site can be found [here](https://songify-app.netlify.app/)
 
 ## How to use this Repository
 - Clone this repository locally 
