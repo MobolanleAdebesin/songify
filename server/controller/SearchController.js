@@ -9,7 +9,6 @@ const axios = require('axios').default;
 module.exports = { 
     index:  async (req, res) => {
     
-        console.log(req);
         let tokenRequest = await axios({
             url: 'https://accounts.spotify.com/api/token',
             method: 'post', 
