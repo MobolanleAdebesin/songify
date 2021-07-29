@@ -44,5 +44,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^4.28.5",
+    "eslint": "^7.31.0",
+    "prettier": "^2.3.2",
+    "prettier-eslint": "^13.0.0"
   }
 }
