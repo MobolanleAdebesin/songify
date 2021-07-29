@@ -7,8 +7,8 @@ const app = express();
 
 
 app.use(cors());
-app.use(parser.urlencoded({extended: true}));
-app.use(parser.json());
+
+app.use(express.json());
 
 const appRoutes = require('./routes/appRoutes'); 
 
