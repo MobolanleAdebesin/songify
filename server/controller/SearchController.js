@@ -72,7 +72,7 @@ module.exports = {
             let token = tokenRequest.data.access_token;
 
                 let rawSongData = await axios({
-                    url: `${req.body.title}&type=track&market=US&include_external=audio`, 
+                    url: `${req.body.title}&type=track&market=US&include_external=audio&limit=5`, 
                     baseURL: 'https://api.spotify.com/v1/search?q=',
                     method: 'get', 
                     headers: {
