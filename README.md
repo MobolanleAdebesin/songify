@@ -2,6 +2,10 @@
 
 
 ## Project Repository Description
+
+I chose to build Songify, audio playback app, because I love music and I've always wanted to build a project that utilizes Spotify's API. It was a fun challenge learning about the authentication process
+and figuring out what information could be used to reach an MVP. 
+
 Songify is a simple full-stack application that allows users to: 
 1. Search for a song by entering the title of a track into the search bar 
 1. Receive a list of 5 songs that match the searched title 
@@ -11,13 +15,14 @@ Songify is a simple full-stack application that allows users to:
 The deployed site can be found [here](https://nostalgic-mirzakhani-fcf196.netlify.app/)
 
 ## How to use this Repository
-- clone this repository locally 
-- run npm init to pull dependencies 
-- create a spotify developer account [here](https://developer.spotify.com/) and create an application to generate `client_id` and `client_secret_key`
-
-
-I chose to build an audio playback app because I love music and I've always wanted to build a project that utilizes Spotify's API. It was a fun challenge learning about the authentication process
-and figuring out what information could be used to reach an MVP. 
+- Clone this repository locally 
+- Run `npm install` to pull dependencies 
+- Create a spotify developer account [here](https://developer.spotify.com/) 
+  - Create an application 
+  - Generate `client_id` and `client_secret_key`
+- Add the generated `client_id` and `client` to the `.env` folder in the server directory 
+- To run the server: `npm run dev` in the server directory 
+- To run the client: `npm run start` in the client directory 
 
 
 ## Web App Requirement
@@ -33,6 +38,11 @@ and figuring out what information could be used to reach an MVP.
 - JavaScript compiled with TypeScript 
 - Node 
 - Express 
+
+## Technologies Used 
+- Front-end deployed via Netflify
+- Back-end deployed via Heroku 
+
   
 ## UI Design
 When considering accessibility I tried to go with a simple design (if it's good enough for Google, right?) that included titles for the iframe components, 
@@ -44,16 +54,19 @@ buttons that clicked, a text field with a label, and minimal color for minimal c
 
 
 ## Architecture Pattern/Overview 
-- I implemented the MVC pattern
-- Currently, the Songify API consists of a single POST endpoint with a searchRoute(handles the HTTP POST request) and a searchController (handles the Spotify Integration logic) and a to allow a user to retrieve a song list the endpoint is: 
-(https://songify-app-api.herokuapp.com/search
+- The Songify API implements an MVC pattern via: 
+  - a single POST endpoint with a searchRoute(handles the HTTP POST request) 
+  - searchController (handles the Spotify Integration logic) 
+  - allowing a user to retrieve a song list the endpoint is: https://songify-app-api.herokuapp.com/search
+ 
 - Components: 
-1. IFrame (takes in two props: song title and id in order to retrieve the song from spotify)
-1. NestedGrid (used to organize each iframe and capitalizes on Material UI's layout features and built in responsive design 
+ - IFrame: takes in two props: song title and id in order to retrieve the song from spotify
+ - NestedGrid: used to organize each iframe and capitalizes on Material UI's layout features and built in responsive design 
 
 ## Planning/Decision Making 
 Some of the decision making: 
 - Configuring webpack vs. using Create-react-app
+- Parsed and sanitized the data returning from the Spotify API
 - Making the single endpoint a GET vs POST request
 - Implementing a validation library vs. writing custom validation 
 - Using Axios for HTTP requests once I realized that the spotify examples were using a depracated library 
